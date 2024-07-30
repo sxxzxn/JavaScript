@@ -170,13 +170,12 @@ document.write("<hr>")
 var i=1;
 var j=1;
 
-document.write("<table border=1>");
+document.write("<table>");
     while (i <= 10) {
       document.write("<tr>");
         j=1;
       while (j <= 6) {
-        document.write("<td>" + i + "," + j + "</td>"); 
-        j++;
+        //기존위치
         if (i == 1) {
           document.write("<td>" + i + "," + j + "</td>");
         } else {
@@ -205,7 +204,7 @@ document.write("<table border=1>");
             }
           }
         }
-        
+        j++; // 위치 변경
       }
       document.write("</tr>");
       i++;
