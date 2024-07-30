@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    td {
+      border: 1px solid black;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <ul>
+    <li>
+      for문
+      <p>for ( 초기값; 조건; 증가식){
+        실행문;
+        조건문;
+        반복문;
+        함수;
+        선언문;
+        .....
+        }
+      </p>
+      <p>
+        for(i=0; true;){
+
+        }
+      </p>
+      <p>
+        for(;;){
+        ~~무한루프~~
+        }
+      </p>
+    </li>
+    <li>초기값 : for문에서 사용하는 반복 조건값을 초기화</li>
+    <li>조건 : 조건이 true 동안에 for문 반복</li>
+    <li>증가식 : for 문이 반복되는 동안 초기값을 증가 시킴</li>
+  </ul>
+
+  <ul>
+    <li>while문</li>
+    <li>
+      <p>while(조건){<br>
+        실행구문;
+        for문;
+        while문;
+        함수;
+        선언;
+
+        break;
+        continue;
+        ...}</p>
+    </li>
+    <li>do~while문</li>
+    <li>
+      <p>do{<br>
+        실행구문
+        break;
+        continue;
+        }
+        while(조건)
+      </p>
+    </li>
+  </ul>
+
+  <script>
+    // 1번 단 한번 실행 하고 2->3->4->2순서
+    // for (1(i=1)한번만 실행; 2(i<=10;) 4(i++)){
+    // 3( sum += i;
+    // document.write("i = " + i + " : sum = " + sum + "<br>") );
+
+    // var i = 0;
+    // var sum = 0;
+    // for (i = 1; i <= 10; i++) {
+    //   sum += i;
+    //   document.write("i = " + i + " : sum = " + sum + "<br>");
+    // }
+
+    // document.write("i = " + i + " : sum = " + sum);
+
+    // for(var i=0, name="조수진", age=10; i<10; i++){
+    // i++
+    // document.write("<br>i =  "+ i +"<br>")
+    //   break;
+    // }
+    // document.write("i =  "+ i +"<br>")
+    // document.write("name = " + name);
+
+    // var a = prompt ("원하는 숫자를 입력하세요 ");
+    // for( var i=1; i<=9; i++){
+    //   document.write(a + "x " + i + "=" + a*i +"<br>");
+    // }
+    // var a = prompt ("원하는숫자입력");
+    // var i = 1;
+    // while (i <= 9) {
+
+    // //  if ( i > 3 ) break;
+    //   document.write(a + " x " + i + " = " + a * i + "<br>");
+    //   i++
+    // }
+
+
+    // for (i = 1; i <= 9; i++) {
+    //   document.write(" for 구구단 " + i + "<br>")
+    //   for (j = 1; j <= 9; j++) {
+    //     document.write(i + " x " + j + " = " + i * j + "<br>");
+
+    //   }
+    //   document.write("<br>");
+    // }
+
+    // var a = 2;
+    // var b = 1;
+    // while (a <= 9) {
+    //   while (b <= 9) {
+    //     document.write(a + " x " + b + " = " + a * b + "<br>");
+    //     b++;
+    //   }
+    //   a++;
+    //   b=1;
+    //   document.write("<br>");
+    // }
+
+    document.write("<table>");
+    for (var i = 1; i <= 10; i++) {
+      document.write("<tr>");
+      for (var j = 1; j <= 6; j++) {
+        if (i == 1) {
+          document.write("<td>" + i + "," + j + "</td>");
+        } else {
+          if (i == 2 && j == 6) {
+            document.write("<td rowspan='9'>" + i + "," + j + "</td>");
+          } else {
+            // document.write("<td>" + i+","+j + "</td>");
+            if (i % 2 == 0) {
+              // document.write("<td>" + i+","+j + "</td>");
+              if (j == 2) {
+                document.write("<td colspan='2'>" + i + "," + j + "</td>");
+                j++;
+              } else {
+                document.write("<td>" + i + "," + j + "</td>");
+              }
+            } else {
+              if (j == 3) {
+                document.write("<td colspan='2'>" + i + "," + j + "</td>");
+                j++;
+              } else {
+                document.write("<td>" + i + "," + j + "</td>");
+              }
+            }
+            if (j == 5 && i >= 3) {
+              break;
+            }
+          }
+        }
+      }
+      document.write("</tr>");
+    }
+    document.write("</table>");
+
+
+
+document.write("<hr>")
+var i=1;
+var j=1;
+
+document.write("<table border=1>");
+    while (i <= 10) {
+      document.write("<tr>");
+        j=1;
+      while (j <= 6) {
+        document.write("<td>" + i + "," + j + "</td>"); 
+        j++;
+        if (i == 1) {
+          document.write("<td>" + i + "," + j + "</td>");
+        } else {
+          if (i == 2 && j == 6) {
+            document.write("<td rowspan='9'>" + i + "," + j + "</td>");
+          } else {
+            // document.write("<td>" + i+","+j + "</td>");
+            if (i % 2 == 0) {
+              // document.write("<td>" + i+","+j + "</td>");
+              if (j == 2) {
+                document.write("<td colspan='2'>" + i + "," + j + "</td>");
+                j++;
+              } else {
+                document.write("<td>" + i + "," + j + "</td>");
+              }
+            } else {
+              if (j == 3) {
+                document.write("<td colspan='2'>" + i + "," + j + "</td>");
+                j++;
+              } else {
+                document.write("<td>" + i + "," + j + "</td>");
+              }
+            }
+            if (j == 5 && i >= 3) {
+              break;
+            }
+          }
+        }
+        
+      }
+      document.write("</tr>");
+      i++;
+    }
+    document.write("</table>");
+  </script>
+</body>
+
+</html>

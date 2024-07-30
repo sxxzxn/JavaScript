@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    let a=10; //전역벽수
+    function sum(){
+      console.log(`함수 내부 ${a}`);
+    }
+    sum();
+    console.log(`함수 외부 ${a}`);
+
+
+    {
+      let b=20;
+      console.log(`지역 코드 블럭 내부 ${a}`);
+      console.log(`지역 코드 블럭 내부 ${b}`);
+    }
+
+    console.log(`지역 코드 블럭 외부 ${a}`);
+    // console.log(`지역 코드 블럭 외부 ${b}`);
+
+
+    const c= 40;
+    function sum2(){
+      let a = 50;
+      const c = 70;
+      console.log(`함수 코드 블럭 내부 ${a}`);
+      console.log(`함수 코드 블럭 내부 ${c}`);
+    }
+    
+    sum2();
+    console.log(`함수 코드 블럭 외부 ${a}`);
+    console.log(`함수 코드 블럭 외부 ${c}`);
+
+
+    console.log(numx);
+    var numx=10;
+    //변수에 선언했을땐 확인 부ㅏ
+
+    printx();
+    function printx(){
+      console.log("hello");
+    }
+// 함수에 선언되면 제일 위로 올려서 확인 가능...
+  </script>
+  
+</body>
+</html>

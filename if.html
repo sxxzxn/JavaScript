@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문의 구조</title>
+</head>
+
+<body>
+  <h1>반복문의 구조</h1>
+
+  <code>
+    if( 조건문 ){ <br>
+      실행문1;<br>
+      실행문2;<br>
+      실행문3;<br>
+    } else {<br>
+      실행문4;<br>
+      실행문5;<br>
+    }<br>
+  </code>
+
+  <code>
+    삼항 연산자 : ? <br>
+
+
+    (조건) ? 참일때 처리 로직 : 거짓일 때 처리 로직;
+  </code>
+
+<script>
+  // var no = prompt("숫자를 입력하세요");
+  // if (no % 2){
+  //   alert("2의 배수가 아닙니다");
+  // } else{
+  //   alert("2의 배수입니다");
+  // }
+
+  // var num1 = prompt("숫자 1 : ");
+  // var num2 = prompt("숫자 2 : ");
+
+  // if ( num1 < 10 || num2 > 20 ) {
+  //   alert("num1:" + num1 + " , num : " + num2);
+  // }
+  // else {
+  //   alert("eles");
+  // }
+
+//   var num1 = 10;
+//   var num2 = 0.1;
+
+//   console.log ("num1 :" + num1);
+//   console.log ("num2 :" + num2);
+//   console.log ("num1 + num2  :" + num1 + num2);
+//   console.log ( num1 + num2);
+ 
+  
+// var num3 = 10;
+// var num4 = "abc";
+// var num5 = "100";
+// var num6 = "20abc";
+// var num7 = "abc20";
+// var num8 = "ab20c";
+
+// console.log(num3+num4);
+// console.log(num3+num5);
+// console.log(num3+num6);
+// console.log(num3+parseInt(num6));
+// console.log(parseInt("abc"));
+// console.log(parseInt(num7));
+// console.log(parseInt(num8));
+
+// var bool1=true;
+// var bool2=false;
+// var bool3=1;
+// var bool4=0;
+
+// console.log(bool1);
+// console.log(bool2);
+// console.log(bool3);
+// console.log(bool4);
+// console.log(bool1 && bool3);
+// console.log(bool2 && bool4);
+// console.log(bool2 && bool3);
+// console.log(bool2 && bool4);
+
+// var bool5 = "";
+// if ( bool1 && bool3){
+//   bool5 = true; 
+// }
+// console.log(bool5);
+
+// var num1=10, num2=100;
+// if(num1 < num2){
+//   console.log("num2가 크다");
+// }else{
+//   console.log("num1가 크다");
+// }
+
+
+// var arrScores = [80, 90, 100];
+// console.log(arrScores);
+// console.log(arrScores[0]);
+// console.log(arrScores[1]);
+// console.log(arrScores[2]);
+
+// 시험점수
+// 90초과~100이하 : A
+// 80~90 : B
+// 70~80 : C
+// 60~70 : D
+
+// var score = prompt("시험점수를입력하세요");
+// if( score > 90){
+//   console.log("A");
+// }
+// else if( score <= 90 && score > 80){
+//   console.log("A");
+// }
+// else if( score <= 80 && score > 70){
+//   console.log("A");
+// }
+// else if( score <= 70 && score > 60){
+//   console.log("A");
+// }
+// else {
+//   console.log("F");
+// }
+
+var score = prompt("시험점수를입력하세요 : ");
+
+switch (true) {
+    case (score > 90): console.log("A");
+        break;
+    case (score <= 90 && score > 80): console.log("B");
+        break;
+    case (score <= 80 && score > 70): console.log("C");
+        break;
+    case (score <= 70 && score > 60):console.log("D");
+        break;
+    default: console.log("F");
+}
+</script>
+
+<ul>
+  <li>삼항연산자
+    <ul>
+      <li><% (조건1) ? a:b%> 항목1</li>
+      <li>항목2</li>
+    </ul>
+  </li>
+</ul>
+</body>
+
+</html>
