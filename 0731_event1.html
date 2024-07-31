@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트실습</title>
+
+  <style>
+div{
+  background-color: aqua;
+  width: 200px;
+  width: 200px;
+}
+
+    </style>
+</head>
+<body>
+  <!-- p542 확인 후 다시  -->
+  <ul>
+    <li><a href="#" onclick="alert('green.')">링크1</a></li>
+    <li><a href="#" onclick="alert('red')">링크2</a></li>
+    <li><a href="#" onclick="alert('blue')">링크3</a></li>
+    <li><a href="#" onclick="alert('링크4을 클릭했습니다.')">링크4</a></li>
+  </ul>
+
+<div id="result">
+
+
+</div>
+
+  <script>
+function changeBg(col){
+  let result = documentr.querSelector('#result');
+  result.style.backgroundcolor = col;
+}
+
+/* function bg1(){
+  let msg= 
+} */
+  </script>
+</body>
+</html>
