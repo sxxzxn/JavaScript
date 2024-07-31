@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#" onclick="changeBg('green')">green</a></li>
+    <li><a href="#" onclick="changeBg('red')">red</a></li>
+    <li><a href="#" onclick="changeBg('blue')">blue</a></li>
+    <li><a href="#" onclick="changeBg('orange')">orange</a></li>
+  </ul>
+  <div id="result"></div>
+  <script>
+    function changeBg(color){
+      let result = document.querySelector("#result");
+      result.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>

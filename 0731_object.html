@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객ㅊ...ㅔ변수실습</title>
+</head>
+
+<body>
+  <script>
+    const p1 = {};
+    const person = {
+      name: {
+        firstName: "Jo",
+        lastName: "Soojin"
+      },
+      hobby: ["football", "baseball"],
+      hello: function () { return "hello"; }
+    };
+    // person.name.firstName;
+    // person.hobby;
+    // for (var item of hobby) {
+    //   item
+    // };
+
+    console.log(person.hello()); //1번
+
+    console.log(person.name.firstName); //2번
+
+    console.log(person["name"]["firstName"]);//2번
+
+
+    //동적 할당 방식
+    const person1 = {}; //person 객체를 받아서 서버에 넣어줌
+    person1.name = {
+      firstName: "수진",
+      lastName: "조"
+    };
+    person1.hobby = ["soccer", "golf", "baseball"];
+    person1.hello = function() {return "goodbye"};
+    
+/*     person1.age = 20;
+    person1["age"] = 30; */
+
+    console.log(person1);
+    console.log(person1.name.firstName);
+    console.log(person1.name.lastName);
+    
+    const persons = {
+      personList: [person, person1,,,,]
+    }
+
+    let num1 = 20;
+    let num2 = num1;
+
+    num1=30;
+
+    console.log(num1);
+    console.log(num2);
+
+    const copyPerson =person1;
+
+    person1.name.firstName = "하니";
+
+    console.log(person1.name.firstName);
+    console.log(copyPerson.name.firstName);
+
+    /* 객체에서 const에 person 변수 할당 */
+    //구분이 끝날대 끝에 ; 그냥 블럭연산자에는 ;붙이면 안됨
+    //객체에 하위에 있는 요소에 접근하는 방법 1 dot연산자 2 array 이용
+
+    //객체 타입은 값을 바꿀수 있고 자료형 타입은 변경 안됌
+  </script>
+</body>
+
+</html>
