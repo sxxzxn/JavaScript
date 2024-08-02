@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red-color {
+      color: red;
+    }
+
+    .blue-color {
+      color: blue;
+    }
+
+    .f-size {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div1" class="box1">
+    <p id="text1" class="text">text1</p>
+    <p class="text">text2</p>
+  </div>
+  <div id="div2" class="box2">
+    <p class="text">text3</p>
+    <p class="text">text4</p>
+  </div>
+
+  <div>
+    <a href="http://www.naver.com">네이버</a>
+  </div>
+
+  <div>
+    <button onclick="changeBg()">배경색</button>
+    <button onclick="chBg()">둘다변경</button>
+    <button onclick="changeClass()">changeClass</button>
+    <button onclick="removeClass()">크기</button>
+    <button onclick="changeClass2()">최종</button>
+    <button onclick="allRemove()">삭제</button>
+    <button onclick="addAttr()">atttibute 속성 추가</button>
+
+  </div>
+
+  <script>
+
+    // const el = document.querySelector(".text");
+    // const el2 = document.querySelector("#div1");
+    // const el3 = document.querySelector("#div2");
+    // const el4 = document.querySelectorAll(".text");
+    // document.write(`${el4.innerHTML}`);
+    // document.write(`${JSON.stringify(el4)}`);
+
+    function changeBg() {
+      const div1 = document.querySelector("#div1");
+      div1.style.backgroundColor = "red";
+      div1.style.fontSize = "30px";
+      div1.style.color = "blue";
+      const div2 = document.querySelector("#div2");
+      div2.style.backgroundColor = "blue";
+      div2.style.fontSize = "30px";
+      div2.style.color = "white";
+    }
+
+    //   function changeBg2(divId='div2'){
+    //     const div2 = document.querySelector("#div2");
+    //     div2.style.backgroundColor = "red";
+    //     div2.style.fontSize = "30px";
+    //     div2.style.color = "blue";
+    //   }
+
+
+    //   function divs(){
+    //   let divSt = document.getElementsByTagName("div");
+    //   for(let s in divSt){
+    //     div.style.backgroundColor = "red";
+    //     div.style.fontSize = "30px";
+    //     div.style.color = "blue";
+    //   }
+    //   return divs;
+    // }
+    // console.log(divSt);
+
+    function chBg() {
+      let redColor = "rgb(255, 0, 0)";
+      let blueColor = "#0000ff";
+      let bgColor = redColor;
+      let fontColor = "#ffffff";
+      const div1 = document.querySelector("#div1");
+      const div2 = document.querySelector("#div2");
+      if (div1.style.backgroundColor != redColor) {
+        div1.style.backgroundColor = redColor;
+        div2.style.backgroundColor = blueColor;
+      } else {
+        div1.style.backgroundColor = blueColor;
+        div2.style.backgroundColor = redColor;
+      }
+    }
+
+    function changeClass() {
+      const pEl = document.querySelector("#text1");
+      pEl.classList.add('red-color', 'f-size');
+    }
+
+    function changeClass2() {
+      const objPEl = document.querySelectorAll("p");
+      for (let pEl of objPEl) {
+        if (pEl.classList.contains("red-color")) {
+          pEl.classList.remove("red-color");
+          pEl.classList.add("blue-color");
+        } else {
+          pEl.classList.add("red-color");
+          pEl.classList.remove("blue-color");
+        }
+        if (pEl.classList.contains("f-size")) {
+          pEl.classList.remove("f-size");
+        } else {
+          pEl.classList.add("f-size");
+        }
+      }
+      pEl.classList.add('red-color', 'f-size');
+    }
+
+    function removeClass() {
+      const pEl = document.querySelector("#text1");
+      pEl.classList.remove('red-color');
+    }
+
+    function allRemove() {
+      const pEl = document.querySelectorAll("p"); //배열
+      pEl.classList.remove('red-color'); //객체로 접근 (배열로 접근하는방법을 사용해야함..! 생각해보기!)
+      pEl.classList.remove('blue-color');
+      pEl.classList.remove('f-size');
+    }
+    // 속성값 추가하기
+    // 1. 클래스추가
+    // 2. 사용자 정의 data-속성추가
+    // 내용 추가 눌러서 추가추가추가추가 할때 사용할수있음!(ex.기타란추가)
+    function addAttr() {
+      let aEl = document.querySelector('a');
+      if (aEl.classList.contains("red-color")){
+        // aEl.style.removeClass("red-color");
+        aEl.removeAttribute("class");
+      }else{
+      aEl.setAttribute("class","red-color");
+      aEl.setAttribute("dgta-link", "네이버");
+    }
+    }
+  </script>
+</body>
+
+</html>

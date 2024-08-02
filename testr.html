@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let memList = {
+      memInfo: [
+        { name: "조수진1", id: "1111" },
+        { name: "조수진2", id: "2222" },
+        { name: "조수진3", id: "3333" },
+        { name: "조수진4", id: "4444" },
+        { name: "조수진5", id: "5555" },
+        { name: "조수진6", id: "6666" },
+        { name: "조수진7", id: "7777" },
+        { name: "조수진8", id: "8888" },
+        { name: "조수진9", id: "9999" },
+        { name: "조수진10", id: "1010" }
+      ]
+    }
+
+    function getRanMem(memList, count) {
+      let randomList = []; // 당첨자 목록
+      let usedList = []; // 중복 확인
+      while (randomList.length < count) {
+        let randomMem = Math.floor(Math.random() * memList.memInfo.length);
+        if (!usedList.includes(randomMem)) {
+          usedList.push(randomMem);
+          let selectedMem = memList.memInfo[randomMem];
+          // 이름에 ** 추가
+          let maskedName = selectedMem.name.slice(0, 1) + "**" + selectedMem.name.slice(3);
+          randomList.push({ name: maskedName, id: selectedMem.id });
+        }
+      }
+      return randomList;
+    }
+
+    let finMem = getRanMem(memList, 4);
+    let output = "";
+    finMem.forEach(mem => {
+      output += `당첨자: ${mem.name}, ${mem.id}<br>`;
+    });
+    document.write(output);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body{
+      width:5000px;
+      height: 5000px;
+    }
+
+    div{
+      width: 10px;
+      height: 10px;
+    }
+  </style>
+</head>
+<body>
+
+    <button onclick=" printInfo()">윈도우정보</button>
+    <button onclick=" move()">이동</button>
+    <!-- <button onclick=" open()">오픈</button> -->
+    <button onclick=" popup()">팝업</button>
+ <hr>
+
+
+
+  <script>
+    function printInfo(){
+      document.write(`웹 브라우저 너비 : ${window.innerWidth}<br>`);
+      document.write(`웹 브라우저 높이 : ${window.innerHeight}<br>`);
+      document.write(`웹 브라우저 창의 너비 : ${window.outerWidth}<br>`);
+      document.write(`웹 브라우저 창 높이 : ${window.outerHeight}<br>`);
+      document.write(`웹 브라우저 창과 모니터 사이 간격 윗부분 : ${window.screenTop} :  ${screenY}<br>`);
+      document.write(`웹 브라우저 모니터 사이 간격 왼쪽 : ${window.screenLeft} : ${screenX}<br>`);
+      document.write(`웹 브라우저 가로위치 :  ${window.scrollX}<br>`);
+      document.write(`웹 브라우저 세로위치 : ${window.scrollY}<br>`);
+    }
+
+    function move(){
+      window.moveTo(200, 10);
+    }
+    function popup(){
+      window.open("0801_docment.html", "NEW", "width=100 height=200");
+    }
+
+
+
+    function sTo(){
+      // window.scrollTo(100,200);
+      window.scrollTo({top:4000, behavior:'smooth'});
+    }
+
+    function sBy(){
+      // window.scrollBy(100,200);
+      window.scrollBy({top:4000, behavior:'smooth'});
+    }
+  </script>
+
+
+<div>
+
+  <button onclick="sTo()">scrollTo(100,200)</button>
+  <button onclick="sBy()">scrollBy(100,200)</button>
+</div>
+
+</body>
+</html>

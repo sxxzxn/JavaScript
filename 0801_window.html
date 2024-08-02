@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>윈도우</title>
+</head>
+
+<body>
+  <ul>
+    <li><a href="https://www.naver.com" target="_blank">새창을 열어주세요</a></li>
+    <li><a onclick="window_open();">새창을 열어주세요</a></li>
+    <li><a onclick="div_open();">새창을 열어주세요</a></li>
+  </ul>
+<div id="div1">
+테스트
+
+</div>
+
+  <script>
+    function window_open(url, target, props){
+      if(!url){
+        url = "http://www.daum.net"
+      }if(!target){
+        target = "NOTICE";
+      }if(!props){
+        props = "width=100px, height=100px";
+      }
+      window.open(url, target, props);
+    }
+function div_open(){
+  let div1 = document.getElementById("div1");
+  div1.style.display = "none";
+}
+  </script>
+</body>
+
+</html>

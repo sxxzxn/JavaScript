@@ -174,23 +174,23 @@
 
     let arrScore = [30, 50, 70, 80, 90, 75];
     let sum = 0;
-    let fin = 0;
+
     for (let i = 0; i < arrScore.length; i++) {
       sum += arrScore[i];
     }
-    fin = sum / arrScore.length
+    let fin = sum / arrScore.length
 
     document.write("기본 for 평균" + fin + "<br>");
 
     const arrScore2 = [30, 50, 70, 80, 90, 75];
     let sum2 = 0;
-    let fin2 = 0;
+
 
     for (let score of arrScore2) {
       sum2 += score;
     }
 
-    fin2 = sum2 / arrScore2.length;
+    let fin2 = sum2 / arrScore2.length;
 
     document.write("for of 평균: " + fin2 +"<br>");
 
@@ -202,6 +202,7 @@
     }
 
     let fin3 = sum3 / arrScore3.length;
+
 
     document.write("for in 평균: " + fin3);
 

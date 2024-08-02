@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>요소 노드 추가하기</h1>
+  <!-- 
+  1.a태그 추가
+  2.a태그에 네이버 추가 -->
+  <div id="pDiv">
+    <ul id="ulList">
+      <li id="liList">네이버</li>
+      <li id="liList2">다음</li>
+    </ul>
+  </div>
+
+  <div>
+    <button onclick="addCreateTag()">a태그 추가</button>
+    <button onclick="addHtml()">네이버</button>
+    <button onclick="add()">add</button>
+    <button onclick="add2()">add2</button>
+    <button onclick="add3()">add2</button>
+
+
+  </div>
+  <script>
+    function addCreateTag() {
+      //1.페이런트 태그 가져오기
+      // 2. 태그 엘리먼트를 생성
+      // 3. 태그의 속성을 설정
+      //4. 페어런트 태그에 생성한 엘리먼트를 추가한다.
+      const pDiv = document.querySelector("#pDiv");
+      const aEl = document.createElement("a");
+      const aHref = document.createAttribute('href');
+      aHref.value = "https://www.naver.com";
+      const aTarget = document.createAttribute("target");
+      aTarget.value = "_blank";
+      const aText = document.createTextNode("네이버");
+      aEl.appendChild(aText);
+      aEl.setAttributeNode(aHref);
+      aEl.setAttributeNode(aTarget);
+      pDiv.appendChild(aEl);
+    }
+
+    function addHtml() {
+      const pDiv = document.querySelector("#pDiv");
+      pDiv.innerHTML += "<a href = 'https://www.naver.com'> 네이버</a>"
+    }
+
+    function add() {
+      const ul = document.querySelector("#ulList");
+
+      const addhref = [
+        { href: "https://naver.com", text: "네이버" },
+        { href: "https://daum.net", text: "다음" }
+      ];
+
+      for (let i = 0; i < 6; i++) {
+        let item = document.createElement('li');
+        let addA = document.createElement('a');
+
+        addA.href = addhref[i % 2].href;
+        addA.textContent = addhref[i % 2].text;
+
+        item.appendChild(addA);
+        ul.appendChild(item);
+      }
+    }
+
+    function add2() {
+      const ul = document.querySelector("#ulList");
+
+      arrli = [
+        { href: "https://www.naver.com", text: "네이버" },
+        { href: "https://www.daum.net", text: "다음" }
+      ]
+
+      for (i = 0; i < 6; i++) {
+        let lis = document.createElement("li");
+        let as = document.createElement("a");
+
+        as.href = arrli[i % 2].href;
+        as.textContent = arrli[i % 2].text;
+
+        lis.appendChild(as);
+        ul.appendChild(lis);
+
+      }
+
+    }
+
+
+    function add3() {
+      const uls = document.querySelector("#ulList");
+      let addli = [
+        { href: "https://www.naver.com", text: "네이버" },
+        { href: "https://www.daum.net", text: "다음" }
+      ];
+
+      for (i = 0; i < 6; i++) {
+        let plusLi = document.createAttribute("li");
+        let plusA = document.createAttribute("a");
+
+        plusA.href = addli[i % 2].href;
+        plusA.textContent = addli[i % 2].text;
+
+        plusLi.appendChild(plusA);
+        ul.appendChild(plusLi);
+      }
+    }
+  </script>
+</body>
+
+</html>

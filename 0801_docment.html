@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문서 객체 모델</title>
+
+
+</head>
+<body>
+  <h1>문서 객체 모델( DOM : document Object Model)</h1>
+  <ul>
+    <li>DOM 트리
+      <ul>
+        <li>웹 문서에 있는 요소들 간의 부모, 자식 관계를 계층 구조로 표시한 것</li>
+        <li>자바 스크립트가 이해할 수 있도록 객체화한 모델 구조</li>
+        <li>나무 형태로 표현되기 때문에 DOM 트리라고 함</li>
+        <li>노드(node) : DOM 트리에서 가지가 갈라져 나간 항목</li>
+        <li>루트 노트 (root node) : DOM 트리의 시작 부분</li>
+        <li>모든 HTML 태그는 요소(element) 노드</li>
+        <li>웹 문서의 텍스트 내용은 요소 노드의 자식 노드인 텍스트(text)노드</li>
+        <li>태그의 속성 : 요소 노드의 자식 노드인 속성(attribute)</li>
+        <li>주석 : 주석(comment) 노드</li>
+        <!-- <li>attribute : 바뀌지 않는거 (기질) / property : 변경 가능한거 (성격)</li> -->
+      </ul>
+    </li>
+    <li>노드의 타입
+      <ul>
+        <li>문서 노드(Node.DOCUMENT_NODE) : 최상위 DOCUMENT 객체의 노드 타입</li>
+        <li>요소 노드(Node.ELEMENT_NODE) : 요소의 노드 타입 -> h1, p태그,,,</li>
+        <li>속성 노드(Node.ARRTIBUTE_NODE) : 속성의 노드 타입 -> href,src,,,</li>
+        <li>텍스트 노드(Node.TEXT_NODE) : 텍스트에 해당 하는 노드 타입</li>
+        <li>주석 노드(Node.COMMENT_NODE) : 주석에 해당하는 노드 타입</li>
+      </ul>
+    </li>
+    <!-- 암기 -->
+    <li>DOM 요소에 접근 방법(메서드)
+      <ul>
+        <li>getElementById("id이름") 메서드 
+          <ul>
+            <li>형식 : 요소명.getElementById("id이름")</li>
+            <li>return :해당하는 객체 요소들</li>
+          </ul>
+        </li>
+        <li>getElementByClassName()메서드
+          <ul>
+            <li>형식 : 요소명.getElementByClassName("class명")</li>
+          </ul>
+        </li>
+        <li>getElementByName()메서드
+          <ul>
+            <li>형식 : 요소명.getElementByClassName("태그명")</li>
+          </ul>
+        </li>
+        <li>querySelector()메서드
+          <ul>
+            <li>형식 : 요소명.querySelector("선택자(id,class모두 사용가능)")</li>
+            <li>형식 : 요소명.querySelector("#아이디")</li>
+            <li>형식 : 요소명.querySelector(".클래스")</li>
+            <li>형식 : 요소명.querySelector(li)</li>
+          </ul>
+        </li>
+        <li>querySelectorAll()메서드
+          <ul>
+            <li>형식 : 요소명.querySelector("선택자+태그")</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>노드추가하기
+      <ul>
+        <li>요소 노드 생성
+          <ul>
+            <li>createElement(태그명)</li>
+            <li>형식 : document.createElement("a")</li>
+          </ul>
+        </li>
+        <li>요소 노드에 텍스노드 추가하기
+          <ul>
+            <li>document.createTextNode("입력한문자")</li>
+            <li>부모노드.appendChild(텍스트노드)</li>
+            <li>추가순서
+              <ol>
+                <li>부모 노드를 생성</li>
+                <li>텍스트 노드를 생성</li>
+                <li>부모 노드에 텍스트 노드를 추가</li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>
