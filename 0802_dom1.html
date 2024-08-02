@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>돔요소에 접근하기</title>
+</head>
+
+<body>
+  <h1 id="title">title</h1>
+  <p class="text">text-1</p>
+  <p class="text">text-2</p>
+  <div class="box1">
+    <p class="text">text1</p>
+    <p class="text">text2</p>
+  </div>
+
+  <div class="box2">
+    <p class="text">text3</p>
+    <p class="text">text4</p>
+  </div>
+
+  <div id="div1">
+    <p class="text">text3</p>
+    <p class="text">text4</p>
+  </div>
+  <script>
+    const el = document.getElementById("title");
+    document.write(`${el}<br>`);
+
+    const classEl = document.getElementsByClassName("text");
+    document.write(`${classEl}<br>`);
+
+    // for (let e of classEl) {
+    //   document.write(`${e}<br>`);
+    // }
+
+    // const tagEls = document.getElementsByName("p");
+    // document.write(`${tagEls}<br>`);
+    // for (let el of classEl) {
+    //   document.write(`${el} <br>`);
+    // }
+    const qel = document.querySelector(".box1");
+    document.write(`class : ${qel} <br> `);
+    const qel2 = document.querySelector("#div1");
+    document.write(`id : ${qel2} <br> `);
+    const qel3 = document.querySelectorAll("div1");
+    document.write(`div : ${qel3} <br> `);
+
+    // for (let el of qel3) {
+    //   document.write(`${el.className}<br>`);
+    //   document.write(`${el}<br>`);
+    // }
+  </script>
+</body>
+
+</html>

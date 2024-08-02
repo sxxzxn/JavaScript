@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요소조작</title>
+</head>
+
+<body>
+  <p id="title">
+    hello, <span style="display: none;">Javascript</span>
+    <span>코코</span>
+    <span style="display: none;">하니</span>
+  </p>
+  <p>
+    <button id="addInnetHtml" onclick="addInnetHtml()">html추가</button>
+  </p>
+
+  <script>
+    let el1 = document.getElementById("title").textContent;;
+    // 텍스트로 입력된 모든것
+    let el2 = document.getElementById("title").innerText;
+    // display가ㅏ 블럭인것만!(nonn 안나옴)
+    let el3 = document.getElementById("title").innerHTML;
+    //모든 태그를 가져오는데!
+
+    document.write(`el1 : ${el1} <br>`)
+    document.write(`el2 : ${el2} <br>`)
+    document.write(`el3 : ${el3} <br>`)
+
+    function addInnetHtml() {
+      let el = document.getElementById("title");
+      el.innerHTML = "<span style = 'color:red';>HTMl 내용 변경</span>";
+    }
+
+  </script>
+</body>
+
+</html>

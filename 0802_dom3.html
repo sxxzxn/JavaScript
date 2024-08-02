@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM 조작</title>
+  <style>
+    p {
+      color: aliceblue color(srgb red green blue)
+    }
+  </style>
+</head>
+
+<body>
+  <h1>DOM 값 변경하기</h1>
+  <div>
+    <p id="textContent">textContent</p>
+    <p id="innerText">innerText</p>
+    <p id="innerHTML">innerHTML</p>
+  </div>
+  <div>
+    <button onclick="getRanTags();">컬러변경</button>
+  </div>
+
+  <script>
+    // function changeColor() {
+    //   document.getElementById("textContent").innerHTML = "<span style = 'color:" + getRanColor() + ";'>textContent</span>";
+    //   document.getElementById("innerText").innerHTML = "<font style = 'color:" + getRanColor() + ";' >innerText</font>";
+    //   document.getElementById("innerHTML").innerHTML = "<font style = 'color:" + getRanColor() + ";'>innerHTML</font>";
+    // }
+
+    function getRanColor() {
+      let arrColors = ["red","blue","orange","yellow"];
+      let color = [0,0,0];
+      let used = [];
+      while(used<color.length){
+        let rndNo = Math.floor(Math.random() * 4);
+        if(!color.includes(rndNo)){
+          color.push(rndNo)
+          used.push(color[rndNo])
+        }
+        return used;
+      }
+    }
+
+    function getRan() {
+      let r = Math.floor(Math.random() * 256);
+      let g = Math.floor(Math.random() * 256);
+      let b = Math.floor(Math.random() * 256);
+      return `rgb(${r}, ${g}, ${b})`
+    }
+
+    // function getRanHTML() {
+    //   let arrId = ["textContent", "innerText", "innerHTML"];
+    //   let rndNo = Math.floor(Math.random() * 3);
+    //   return arrId[rndNo];
+    //   document.getElementById("arrId[rndNo]").innerHTML =
+    //     "<span style = 'color:" + getRanColor() + ";'></span>";
+    // }
+
+    function getRanTags() {
+      let pTags = document.getElementsByTagName("p");
+      for (let p of pTags) {
+        p.innerHTML = "<span style = 'color:" + getRanColor() + ";'>" + p.innerHTML + "</span>";
+      }
+    }
+
+
+    // function getRndNo(min, max, minFlag) {
+    //   let rndNo = Math.floor(Math.random() * (max - min) + 1 + min);
+    // }
+
+  </script>
+
+
+</body>
+
+</html>
