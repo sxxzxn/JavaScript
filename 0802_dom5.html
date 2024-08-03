@@ -94,25 +94,6 @@
 
     }
 
-
-    function add3() {
-      const uls = document.querySelector("#ulList");
-      let addli = [
-        { href: "https://www.naver.com", text: "네이버" },
-        { href: "https://www.daum.net", text: "다음" }
-      ];
-
-      for (i = 0; i < 6; i++) {
-        let plusLi = document.createAttribute("li");
-        let plusA = document.createAttribute("a");
-
-        plusA.href = addli[i % 2].href;
-        plusA.textContent = addli[i % 2].text;
-
-        plusLi.appendChild(plusA);
-        ul.appendChild(plusLi);
-      }
-    }
   </script>
 </body>
 
