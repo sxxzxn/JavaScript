@@ -135,7 +135,7 @@
     // const rndNo = getRandNo(44);
     // document.write("random No : " + rndNo + "<br>");
 
-    // //1~45까지 숫자 중에서 1개 추출
+    //1~45까지 숫자 중에서 1개 추출
     // function getRanNo(min, max) {
     //   return Math.floor(Math.random() * (max - min)) + 1;
     // }
@@ -165,7 +165,21 @@
     //   return arrLot;
     // }
 
-    // document.write("번호 : " + getLot());
+    function getRanNo(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function getLot() {
+      const arrLot = new Set();
+      while (arrLot.size < 6) {
+        arrLot.add(getRanNo(1, 45));
+      }
+      return [...arrLot];
+    }
+
+    document.write("번호 : " + getLot()+"<br>");
+
+
 
 
     // let arrScore = [30, 50, 70, 80, 90, 75];
@@ -192,12 +206,12 @@
 
     let fin2 = sum2 / arrScore2.length;
 
-    document.write("for of 평균: " + fin2 +"<br>");
+    document.write("for of 평균: " + fin2 + "<br>");
 
 
     const arrScore3 = [30, 50, 70, 80, 90, 75];
     let sum3 = 0;
-    for (let index  in arrScore3) {
+    for (let index in arrScore3) {
       sum3 += arrScore3[index];
     }
 
