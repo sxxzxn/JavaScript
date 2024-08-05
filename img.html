@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지</title>
+
+  <style>
+    img {
+      border: 0px;
+    }
+
+    li {
+      list-style: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li><img src="../soojin/CSS/image/hani1.jpg" class="pic" data-src="../soojin/CSS/image/rabbit.jpeg"></li>
+      <li><img src="../soojin/CSS/image/hani2.jpg" class="pic" data-src="../soojin/CSS/image/rabbit.jpeg"></li>
+      <li><img src="../soojin/CSS/image/tedy.jpeg" class="pic" width="200" data-src="../soojin/CSS/image/rabbit.jpeg">
+      </li>
+    </ul>
+  </div>
+
+
+
+  <!-- <div id="img2">
+
+</div> -->
+<div id="divImg">
+  <img id="img2" src=""/>
+</div>
+
+
+  <script>
+    let imgs = document.querySelectorAll(".pic");
+    for (i = 0; i < imgs.lenth; i++) {
+      imgs[i].addEventListnse("click", showImg);
+    }
+    function showImg() {
+      let imgSrc = this.getAttribube("data-src");
+      const divImg = document.getElementById("divImg")
+      // img2.innerHTML= "<img src=" + imgSrc + "alt= ''/>"
+      const img2 = document.getElementById("img2");
+      img2
+    }
+  </script>
+</body>
+
+</html>

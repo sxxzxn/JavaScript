@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="prod_cnt" data-bagcnt="0" data-bookcnt="0">
+    <div>
+      <span>가방</span><br>
+      <button onclick="addCount('bag');">상품추가+</button>
+      <button onclick="minCount('bag');">상품삭제</button>
+    </div>
+    <div>
+      <span>도서</span><br>
+      <button onclick="addCount('book');">상품추가+</button>
+      <button onclick="minCount('book');">상품삭제</button>
+    </div>
+    <button>주문하기</button>
+  </div>
+  <script>
+    function addCount(type) {
+      const cntEl = document.querySelector("#prod_cnt");
+      switch (type) {
+        case "bag": cntEl.dataset.bagcnt++; break;
+        case "book": cntEl.dataset.bookcnt++; break;
+        default:
+      }
+      //console.log(`cntEl.dataset : ${cntEl.dataset.bagCnt}, ${cntEl.dataset.bookCnt}`);
+      console.log(`cntEl.dataset : ${cntEl.dataset.bagcnt}, ${cntEl.dataset.bookcnt}`);
+    };
+    function minCount(type) {
+      const cntEl = document.querySelector("#prod_cnt");
+      switch (type) {
+        case "bag": cntEl.dataset.bagcnt--; break;
+        case "book": cntEl.dataset.bookCnt--; break;
+        default:
+      }
+      cntEl.dataset.cnt = cntEl.dataset.cnt > 0 ? (cntEl.dataset.cnt -= 1) : 0;
+      console.log(`cntEl.datset : ${cntEl.dataset.bagcnt},  ${cntEl.dataset.bookcnt}`);
+      function countCheck() {
+        const cntEl = document.querySelector("prod_cnt");
+        if (cntEl.dataset.bagcnt <= 0 || cntEl.dataset.bookcnt <= 0) {
+          alert("상품 갯수를 등록하세요");
+        }
+      }
+    };
+  </script>
+</body>
+
+</html>
