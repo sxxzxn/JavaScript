@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폼요소</title>
+
+  <style>
+    div {
+      margin: 10px;
+    }
+
+    label {
+      width: 100px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <form  id="frm" class="frm" action="" method=""></form>
+    <fieldset>
+      <legend>회원가입</legend>
+      <div>
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" value="" minlength="2" maxlength="10" placeholder="이름을 입력하세요" required>
+        <br>
+        <label for="id">아이디</label>
+        <input type="text" id="uid" name="uid" value="" minlength="8" maxlength="20" placeholder="아이디를 입력하세요" required>
+        <br>
+        <label for="sex_0">성별</label>
+        <input type="radio" id="sex_0" name="sex" value="남자" required>남자
+        <input type="radio" id="sex_0" name="sex" value="여자" required>여자
+        <br>
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" value="" minlength="10" maxlength="200" placeholder="이메일을 입력하세요"
+          required>
+        <br>
+        <label for="hobby_0">취미</label>
+        <input type="checkbox" id="hobby_0" name="hobby" value="" maxlength="">여향
+        <input type="checkbox" id="hobby_1" name="hobby" value="" maxlength="">도서
+        <input type="checkbox" id="hobby_2" name="hobby" value="" maxlength="">축구
+        <input type="checkbox" id="hobby_3" name="hobby" value="" maxlength="">야구
+        <br>
+        <label for="area1">지역</label>
+        <select id="area1">
+          <option value="">선택</option>
+          <option value="서울">서울</option>
+          <option value="부산">부산</option>
+          <option value="광주">광주</option>
+          <option value="제주">제주</option>
+          <option value="기타">기타</option>
+        </select>
+        <br>
+        <label for="self">자기소개</label>
+        <textarea maxlength="1000" placeholder="자기소개를 입력하세요" required></textarea>
+        <br>
+        <button type="submit" onclick="frmOk()"> 전송</button>
+      </div>
+    </fieldset>
+  </div>
+  </form>
+  <script>
+    function frmOk() {
+      const frm = document.querySelector("#frm");
+      
+      let strName = frm.name;
+      alert(strName);
+      if (strName.value.length < 1 || strName.value.length > 11){
+        alert("이름을 2자 이상, 10자 이내로 입력하세요");
+       strName.focus();
+       return fales;
+      }
+    }
+  </script>
+</body>
+
+</html>
