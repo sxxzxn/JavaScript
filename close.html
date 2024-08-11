@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <p>자식윈도우</p>
+
+    <button onclick="clo()">닫기</button>
+    <button onclick="change()">부모창 요소 변경</button>
+
+  </div>
+  <script>
+    function clo() {
+      window.close();
+    }
+
+    function change() {
+      const parentObj = opener.document.getElementById("spText");
+      parentObj.style.color = "red";
+    }
+  </script>
+</body>
+
+</html>

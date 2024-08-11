@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폼요소</title>
+
+  <style>
+    div {
+      margin: 10px;
+    }
+
+    label {
+      width: 100px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <form id="frm" action="" method="">
+      <fieldset>
+        <legend>회원가입</legend>
+        <div>
+          <label for="uname">이름</label>
+          <input type="text" id="uname" name="uname" value="" placeholder="이름을 입력하세요">
+          <br>
+          <label for="id">아이디</label>
+          <input type="text" id="uid" name="uid" value="" placeholder="아이디를 입력하세요">
+          <br>
+          <label for="sex_0">성별</label>
+          <input type="radio" id="sex_0" name="sex" value="남자">남자
+          <input type="radio" id="sex_1" name="sex" value="여자">여자
+          <br>
+          <label for="email">이메일</label>
+          <input type="email" id="email" name="email" value="" minlength="10" maxlength="200" placeholder="이메일을 입력하세요">
+          <br>
+          <label for="hobby_0">취미</label>
+          <input type="checkbox" id="hobby_0" name="hobby" value="" maxlength="">여행
+          <input type="checkbox" id="hobby_1" name="hobby" value="" maxlength="">도서
+          <input type="checkbox" id="hobby_2" name="hobby" value="" maxlength="">축구
+          <input type="checkbox" id="hobby_3" name="hobby" value="" maxlength="">야구
+          <br>
+          <label for="area1">지역</label>
+          <select id="area1">
+            <option value="">선택</option>
+            <option value="서울">서울</option>
+            <option value="부산">부산</option>
+            <option value="광주">광주</option>
+            <option value="제주">제주</option>
+            <option value="기타">기타</option>
+          </select>
+          <br>
+          <label for="self">자기소개</label>
+          <textarea maxlength="1000" placeholder="자기소개를 입력하세요"></textarea>
+          <br>
+          <div>
+            <button name="addProBtn" id="addProBtn">이력추가</button>
+            <!-- <button name="ProBtn" id="addProBtn">이력추가</button> -->
+            <ul id="addPro">
+            </ul>
+          </div>
+          <button type="submit" name="goBtn" id="goBtn"> 전송</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <script>
+
+
+    // const addPro = document.querySelector("#addPro");
+    // addPro.addEventListener("click", function (e) {
+    //   e.preventDefault();
+    //   e.stopPropagation();
+
+    //   const ulPro = document.querySelector("#addPro");
+    //   let tmpHTML = "<li><span>초등학교</span><span>기간</span><span onclick:deletLi(this)>-<span></li>";
+    //   ulPro.innerHTML += tmpHTML;
+    // }, false);
+
+    // function deletLi(obj) {
+    //   obj.innerHtml = ""
+    // }
+
+    // const addProBtn = document.querySelector("#addProBtn"); // 버튼을 선택합니다.
+    // const addPro = document.querySelector("#addPro"); // ul 요소를 선택합니다.
+
+    // addProBtn.addEventListener("click", function (e) { // 버튼에 클릭 이벤트 리스너를 추가합니다.
+    //     e.preventDefault();
+    //     e.stopPropagation();
+
+    //     let tmpHTML = "<li><span>초등학교</span><span>기간</span><span onclick='deletLi(this)'>-</span></li>"; // li 요소를 추가합니다.
+    //     addPro.innerHTML += tmpHTML;
+    // }, false);
+
+    // function deletLi(obj) {
+    //     obj.parentElement.remove(); // 부모 li 요소를 제거합니다.
+    // }
+
+
+    // //네이밍 함수
+    // function frmOk() {
+    //   const frm = document.querySelector("#frm");
+    //   let strName = frm.uname;
+    //   if (strName.value.length < 2 || strName.value.length > 10) {
+    //     alert("이름을 2자 이상, 10자 이내로 입력하세요");
+    //     strName.focus();
+    //     return fales;
+    //   }
+    //   let strUid = frm.uid;
+    //   if (strUid.value.length < 3 || strUid.value.length > 10) {
+    //     alert("아이디를 3자 이상, 10자 이내로 입력하세요");
+    //     strUid.focus();
+    //     return fales;
+    //   }
+    //   let strEmail = frm.email;
+    //   if (strEmail.value.length < 8 || strEmail.value.length > 20) {
+    //     alert("이메일을 8자 이상, 20자 이내로 입력하세요");
+    //     strEmail.focus();
+    //     return fales;
+    //   }
+    //   let strSelf = frm.self;
+    //   if (strSelf.value.length < 1000) {
+    //     alert("최대 1000자 까지 입력 가능합니다");
+    //     strEmail.focus();
+    //     return fales;
+    //   }
+    // }
+
+
+    // //익명함수
+    // const frmOk = function () {
+    //   const frm = document.querySelector("#frm");
+    //   let strName = frm.uname;
+    //   if (strName.value.length < 2 || strName.value.length > 10) {
+    //     alert("이름을 2자 이상, 10자 이내로 입력하세요");
+    //     strName.focus();
+    //     return fales;
+    //   }
+    //   let strUid = frm.uid;
+    //   if (strUid.value.length < 3 || strUid.value.length > 10) {
+    //     alert("아이디를 3자 이상, 10자 이내로 입력하세요");
+    //     strUid.focus();
+    //     return fales;
+    //   }
+    //   let strEmail = frm.email;
+    //   if (strEmail.value.length < 8 || strEmail.value.length > 20) {
+    //     alert("이메일을 8자 이상, 20자 이내로 입력하세요");
+    //     strEmail.focus();
+    //     return fales;
+    //   }
+    //   let strSelf = frm.self;
+    //   if (strSelf.value.length < 1000) {
+    //     alert("최대 1000자 까지 입력 가능합니다");
+    //     strEmail.focus();
+    //     return fales;
+    //   }
+    // }
+
+
+
+    // //화살표함수
+    // const frmOk = () => {
+    //   const frm = document.querySelector("#frm");
+    //   let strName = frm.uname;
+    //   if (strName.value.length < 2 || strName.value.length > 10) {
+    //     alert("이름을 2자 이상, 10자 이내로 입력하세요");
+    //     strName.focus();
+    //     return fales;
+    //   }
+    //   let strUid = frm.uid;
+    //   if (strUid.value.length < 3 || strUid.value.length > 10) {
+    //     alert("아이디를 3자 이상, 10자 이내로 입력하세요");
+    //     strUid.focus();
+    //     return fales;
+    //   }
+    //   let strEmail = frm.email;
+    //   if (strEmail.value.length < 8 || strEmail.value.length > 20) {
+    //     alert("이메일을 8자 이상, 20자 이내로 입력하세요");
+    //     strEmail.focus();
+    //     return fales;
+    //   }
+    //   let strSelf = frm.self;
+    //   if (strSelf.value.length < 1000) {
+    //     alert("최대 1000자 까지 입력 가능합니다");
+    //     strEmail.focus();
+    //     return fales;
+    //   }
+    // }
+
+    // const goBtn = document.getElementById("goBtn");
+    // goBtn.addEventListener("click", frmOk())
+
+
+
+    // const btnSubmin = document.getElementById("submit");
+    // btnSubmin.addEventListener("click",frmOk);
+
+  </script>
+</body>
+
+</html>
